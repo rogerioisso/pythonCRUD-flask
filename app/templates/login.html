@@ -1,0 +1,34 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="unicode">
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
+      <body class="text-center">
+        <form class="form-signin" action="home" method="POST">
+          {{ form.csrf_token }}
+          <img src="{{ url_for('static', filename='img/login.png')}}" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Acessar conta</h1>
+                  <div class="form group">
+                  <br>
+                  <label>Usuário</label>
+                  </br>
+                  {{ form.username(_class="form-control", placeholder="Usuario") }}
+                </div>
+                  <div class="form-group">
+                  <br>
+                  <label>Senha</label>
+                  </br>
+                        {{ form.password(_class="form-control") }}
+                </div>
+                    <div class="checkbox">
+                    <br>
+                      <label>
+                  {{ form.remember_me }}
+                    <label>Salvar</label
+                    </label>
+                    </br>
+                    </div>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+              </form>
+</body>
+</head>

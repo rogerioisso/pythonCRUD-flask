@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<link href="{{ url_for('static', filename='css/show.css') }}" rel="stylesheet">
+  <div class="teste">
+  <main role="main" class="inner cover">
+    <p class="lead">Visualizando todos os dados.</p>
+    <body class="text-center">
+
+                      <div><br> {{ table }} </br></div>
+
+
+
+    </div>
+  </main>
+{% endblock %}

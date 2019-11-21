@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div align="center">
+
+  <form class="form-signin2" action="" method="POST">
+    {{ updateForm.csrf_token }}
+
+    <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+    <h1 class="cover-heading">Olá [user] </h1>
+    <p class="lead">Digite os dados para fazer a pesquisa e alteração.</p>
+    <body class="text-center">
+
+      <label>Pesquisa por nome:</label>
+      {{ updateForm.nome_search(_class="form-control") }}
+
+                          <div><br> {{ table }}</br></div>
+
+
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">buscar</button>
+</div>
+</form>
+{% endblock %}

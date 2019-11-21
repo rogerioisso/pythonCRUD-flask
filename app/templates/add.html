@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div align="center">
+    <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+    <p class="lead">Digite os dados para alteração.</p>
+    <body class="text-center">
+
+
+      <form class="form-addDados" method="POST">
+        {{ addForm.hidden_tag() }}
+
+        <div class="form-group">
+      <h1 class="h3 mb-3 font-weight-normal">Adicionar dados</h1>
+            <div class="form group">
+
+            <label>Nome:{{ addForm.nome(_class="form-control") }}</label>
+          </div>
+            <div class="form-group">
+
+            <label>CPF:</label>
+
+                  {{ addForm.cpf(_class="form-control") }}
+          </div>
+          <div class="form-group">
+          <label>Telefone de contato:{{ addForm.telcont(_class="form-control") }}</label>
+        </div>
+
+        <div class="form-group">
+        <label>Telefone de contato dos pais:</label>
+              {{ addForm.telcont_pais(_class="form-control") }}
+      </div>
+
+      <div class="form-group">
+      <label>Data da alugação:</label>
+            {{ addForm.data_al(_class="form-control") }}
+    </div>
+
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Adicionar</button>
+   </div>
+  </form>
+    </body>
+</div>
+{% endblock %}
